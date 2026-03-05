@@ -446,6 +446,8 @@
   "disabled": "Disabilitato",
   "ai_tagging_disabled_desc": "AI tagging is disabled.",
   "tag_selection_placeholder": "Choose or add custom tags…",
+  "filter_by_tags": "Filter by tags...",
+  "no_tags_found": "No tags found",
   "rss_subscriptions": "RSS Subscriptions",
   "rss_subscriptions_desc": "Le iscrizioni ai feed RSS sono un modo per rimanere aggiornati sui tuoi siti web e blog preferiti. Linkwarden recupererà automaticamente gli ultimi articoli ogni {{number}} minuti dai feed da te forniti.",
   "rss_deletion_confirmation": "Are you sure you want to delete this RSS Subscription?",

@@ -446,6 +446,8 @@
   "disabled": "Désactivé",
   "ai_tagging_disabled_desc": "L'étiquetage par IA est désactivé.",
   "tag_selection_placeholder": "Choisir ou ajouter des étiquettes personnalisées…",
+  "filter_by_tags": "Filter by tags...",
+  "no_tags_found": "No tags found",
   "rss_subscriptions": "Abonnements RSS",
   "rss_subscriptions_desc": "Les abonnements RSS sont une manière de rester à jour sur vos sites et blogs favoris. Linkwarden cherchera automatiquement les derniers articles toutes les {{number}} minutes à partir des flux que vous fournirez.",
   "rss_deletion_confirmation": "Êtes-vous sûr(e) de vouloir supprimer cet abonnement RSS ?",

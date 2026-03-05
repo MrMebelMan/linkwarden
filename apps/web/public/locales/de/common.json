@@ -446,6 +446,8 @@
   "disabled": "Deaktiviert",
   "ai_tagging_disabled_desc": "KI-Tagging ist deaktiviert.",
   "tag_selection_placeholder": "Eigene Tags auswählen oder hinzufügen…",
+  "filter_by_tags": "Filter by tags...",
+  "no_tags_found": "No tags found",
   "rss_subscriptions": "RSS Abos",
   "rss_subscriptions_desc": "RSS-Abonnements sind eine Möglichkeit, um Ihren bevorzugten Websites und Blogs zu folgen. Linkwarden ruft automatisch die neuesten Artikel alle {{number}} Minuten aus den von Ihnen bereitgestellten Feeds ab.",
   "rss_deletion_confirmation": "Sind Sie sicher, dass Sie dieses RSS-Abonnement löschen möchten?",

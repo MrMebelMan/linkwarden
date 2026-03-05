@@ -446,6 +446,8 @@
   "disabled": "無効",
   "ai_tagging_disabled_desc": "AIによるタグ付けを無効化します。",
   "tag_selection_placeholder": "カスタムタグを選択または追加",
+  "filter_by_tags": "Filter by tags...",
+  "no_tags_found": "No tags found",
   "rss_subscriptions": "RSSサブスクリプション",
   "rss_subscriptions_desc": "RSSサブスクリプションは、お気に入りのWebサイトやブログをフォローするための方法です。Linkwardenは、指定したフィードから {{number}} 分ごとに最新の記事を自動的に取得します。",
   "rss_deletion_confirmation": "このRSSサブスクリプションを削除してもよろしいですか?",

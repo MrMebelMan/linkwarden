@@ -446,6 +446,8 @@
   "disabled": "Kapalı",
   "ai_tagging_disabled_desc": "Yapay zeka etiketlemesi devre dışı bırakıldı.",
   "tag_selection_placeholder": "Özel etiketler seçin veya ekleyin…",
+  "filter_by_tags": "Filter by tags...",
+  "no_tags_found": "No tags found",
   "rss_subscriptions": "RSS Abonelikleri",
   "rss_subscriptions_desc": "RSS Abonelikleri, favori web siteleriniz ve bloglarınızda güncel kalmanızı sağlayan bir yoludur. Linkwarden, sağladığınız aboneliklerde her {{number}} dakikada en son makaleleri otomatik olarak yenilenecektir.",
   "rss_deletion_confirmation": "RSS Aboneliği silmek ister misiniz?",

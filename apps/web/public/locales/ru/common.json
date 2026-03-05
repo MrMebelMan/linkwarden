@@ -446,6 +446,8 @@
   "disabled": "Отключена",
   "ai_tagging_disabled_desc": "Автокатегоризация при помощи ИИ отключена.",
   "tag_selection_placeholder": "Выбрать или добавить ключевые слова…",
+  "filter_by_tags": "Filter by tags...",
+  "no_tags_found": "No tags found",
   "rss_subscriptions": "Подписки RSS",
   "rss_subscriptions_desc": "Подписки RSS позволяют быть на короткой ноге с любимыми сайтами и блогами. Linkwarden будет автоматически получать свежие статьи каждые {{number}} мин. из указанных источников.",
   "rss_deletion_confirmation": "Удалить данную подписку RSS?",

@@ -446,6 +446,8 @@
   "disabled": "已停用",
   "ai_tagging_disabled_desc": "AI 標記功能已停用。",
   "tag_selection_placeholder": "選擇或新增自訂標籤...",
+  "filter_by_tags": "Filter by tags...",
+  "no_tags_found": "No tags found",
   "rss_subscriptions": "RSS 訂閱",
   "rss_subscriptions_desc": "RSS 訂閱可以追蹤您追蹤喜愛的網站和部落格的最新動態。Linkwarden 將每隔 {{number}} 分鐘自動從您提供的 RSS Feed 擷取最新文章。",
   "rss_deletion_confirmation": "您確定要刪除此 RSS 訂閱嗎？",

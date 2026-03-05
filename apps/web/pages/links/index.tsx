@@ -1,7 +1,7 @@
 import NoLinksFound from "@/components/NoLinksFound";
 import { useLinks } from "@linkwarden/router/links";
 import MainLayout from "@/layouts/MainLayout";
-import React, { ReactElement, useEffect, useState } from "react";
+import React, { ReactElement, useEffect, useMemo, useState } from "react";
 import { Sort, ViewMode } from "@linkwarden/types";
 import { useRouter } from "next/router";
 import LinkListOptions from "@/components/LinkListOptions";
@@ -21,8 +21,16 @@ const Page: NextPageWithLayout = () => {
     Number(localStorage.getItem("sortBy")) ?? Sort.DateNewestFirst
   );
 
+  const [selectedTagIds, setSelectedTagIds] = useState<number[]>([]);
+  const tagIds = useMemo(
+    () => (selectedTagIds.length > 0 ? selectedTagIds : undefined),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [selectedTagIds.join(",")]
+  );
+
   const { links, data } = useLinks({
     sort: sortBy,
+    tagIds,
   });
 
   const router = useRouter();
@@ -44,6 +52,8 @@ const Page: NextPageWithLayout = () => {
         editMode={editMode}
         setEditMode={setEditMode}
         links={links}
+        selectedTagIds={selectedTagIds}
+        onTagFilterChange={setSelectedTagIds}
       >
         <div className={clsx("flex items-center gap-3")}>
           <i className={`bi-link-45deg text-primary text-3xl drop-shadow`}></i>

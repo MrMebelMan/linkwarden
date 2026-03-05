@@ -6,7 +6,7 @@ import {
   ViewMode,
 } from "@linkwarden/types";
 import { useRouter } from "next/router";
-import React, { ReactElement, useEffect, useState } from "react";
+import React, { ReactElement, useEffect, useMemo, useState } from "react";
 import PageHeader from "@/components/PageHeader";
 import LinkListOptions from "@/components/LinkListOptions";
 import getServerSideProps from "@/lib/client/getServerSideProps";
@@ -31,6 +31,13 @@ const Page: NextPageWithLayout = () => {
   const [activeLink, setActiveLink] =
     useState<LinkIncludingShortenedCollectionAndTags | null>(null);
 
+  const [selectedTagIds, setSelectedTagIds] = useState<number[]>([]);
+  const tagIds = useMemo(
+    () => (selectedTagIds.length > 0 ? selectedTagIds : undefined),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [selectedTagIds.join(",")]
+  );
+
   useEffect(() => {
     if (editMode) return setEditMode(false);
   }, [router]);
@@ -38,6 +45,7 @@ const Page: NextPageWithLayout = () => {
   const { links, data } = useLinks({
     sort: sortBy,
     searchQueryString: decodeURIComponent(router.query.q as string),
+    tagIds,
   });
 
   return (
@@ -51,6 +59,8 @@ const Page: NextPageWithLayout = () => {
         editMode={editMode}
         setEditMode={setEditMode}
         links={links}
+        selectedTagIds={selectedTagIds}
+        onTagFilterChange={setSelectedTagIds}
       >
         <PageHeader icon={"bi-search"} title={t("search_results")} />
       </LinkListOptions>

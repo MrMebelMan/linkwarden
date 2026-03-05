@@ -446,6 +446,8 @@
   "disabled": "关闭",
   "ai_tagging_disabled_desc": "关闭AI标签功能。",
   "tag_selection_placeholder": "选择或添加自定义标签…",
+  "filter_by_tags": "Filter by tags...",
+  "no_tags_found": "No tags found",
   "rss_subscriptions": "RSS订阅",
   "rss_subscriptions_desc": "RSS 订阅可以帮助你及时获取喜爱网站和博客的最新内容。Linkwarden 会每隔 {{number}} 分钟，自动从你添加的订阅源中抓取最新文章。",
   "rss_deletion_confirmation": "要删掉这个RSS订阅吗？",

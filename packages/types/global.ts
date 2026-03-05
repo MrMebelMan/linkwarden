@@ -92,6 +92,7 @@ export type LinkRequestQuery = {
   cursor?: number;
   collectionId?: number;
   tagId?: number;
+  tagIds?: number[];
   pinnedOnly?: boolean;
   searchQueryString?: string;
 };

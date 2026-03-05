@@ -30,7 +30,15 @@ export default async function searchLinks({
   else if (query.sort === Sort.NameZA) order = { name: "desc" };
 
   const tagCondition = [];
-  if (query.tagId) {
+  if (query.tagIds && query.tagIds.length > 0) {
+    for (const id of query.tagIds) {
+      tagCondition.push({
+        tags: {
+          some: { id },
+        },
+      });
+    }
+  } else if (query.tagId) {
     tagCondition.push({
       tags: {
         some: { id: query.tagId },
@@ -113,14 +121,8 @@ export default async function searchLinks({
               ]
             : []),
           ...collectionCondition,
-          {
-            OR: [
-              ...tagCondition,
-              {
-                ...pinnedCondition,
-              },
-            ],
-          },
+          ...tagCondition,
+          pinnedCondition,
         ],
       },
       omit: {
@@ -212,17 +214,9 @@ export default async function searchLinks({
             ]
           : []),
         ...collectionCondition,
-        {
-          OR: [
-            ...tagCondition,
-            {
-              [query.searchQueryString ? "OR" : "AND"]: [
-                pinnedCondition,
-                ...searchConditions,
-              ],
-            },
-          ],
-        },
+        ...tagCondition,
+        pinnedCondition,
+        ...(searchConditions.length > 0 ? [{ OR: searchConditions }] : []),
       ],
     },
     omit: {

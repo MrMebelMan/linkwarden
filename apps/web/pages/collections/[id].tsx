@@ -6,7 +6,7 @@ import {
   ViewMode,
 } from "@linkwarden/types";
 import { useRouter } from "next/router";
-import React, { ReactElement, useEffect, useState } from "react";
+import React, { ReactElement, useEffect, useMemo, useState } from "react";
 import MainLayout from "@/layouts/MainLayout";
 import ProfilePhoto from "@/components/ProfilePhoto";
 import usePermissions from "@/hooks/usePermissions";
@@ -48,9 +48,17 @@ const Page: NextPageWithLayout = () => {
     Number(localStorage.getItem("sortBy")) ?? Sort.DateNewestFirst
   );
 
+  const [selectedTagIds, setSelectedTagIds] = useState<number[]>([]);
+  const tagIds = useMemo(
+    () => (selectedTagIds.length > 0 ? selectedTagIds : undefined),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [selectedTagIds.join(",")]
+  );
+
   const { links, data } = useLinks({
     sort: sortBy,
     collectionId: Number(router.query.id),
+    tagIds,
   });
 
   const [activeLink, setActiveLink] =
@@ -325,6 +333,8 @@ const Page: NextPageWithLayout = () => {
             : undefined
         }
         links={links}
+        selectedTagIds={selectedTagIds}
+        onTagFilterChange={setSelectedTagIds}
       >
         {collections.some((e) => e.parentId === activeCollection?.id) ? (
           <PageHeader

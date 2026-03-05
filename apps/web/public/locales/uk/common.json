@@ -446,6 +446,8 @@
   "disabled": "Вимкнено",
   "ai_tagging_disabled_desc": "Мітки ШІ вимкнуто.",
   "tag_selection_placeholder": "Виберіть або додайте власні мітки…",
+  "filter_by_tags": "Filter by tags...",
+  "no_tags_found": "No tags found",
   "rss_subscriptions": "RSS-підписки",
   "rss_subscriptions_desc": "RSS-підписки дозволяють бути в курсі оновлень ваших улюблених сайтів та блогів. Linkwarden автоматично завантажуватиме останні статті з наданих RSS-стрічок кожні {{number}} хвилин.",
   "rss_deletion_confirmation": "Ви дійсно бажаєте видалити цю RSS-підписку?",

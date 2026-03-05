@@ -446,6 +446,8 @@
   "disabled": "Dezactivat",
   "ai_tagging_disabled_desc": "Etichetarea AI este dezactivată.",
   "tag_selection_placeholder": "Alege sau adaugă etichete personalizate…",
+  "filter_by_tags": "Filter by tags...",
+  "no_tags_found": "No tags found",
   "rss_subscriptions": "Abonamente RSS",
   "rss_subscriptions_desc": "Abonamentele RSS sunt un mijloc prin care poți ține pasul cu site-urile si blogurile tale preferate. Linkwarden va obține automate cele mai curente articole odată la {{number}} minute din fluxurile pe care le-ai furnizat.",
   "rss_deletion_confirmation": "Sunteți sigur că doriți să ștergeți acest abonament RSS?",

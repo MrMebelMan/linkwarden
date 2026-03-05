@@ -32,6 +32,7 @@ const useLinks = (params: LinkRequestQuery = {}, auth?: MobileAuth) => {
       sort,
       collectionId: params.collectionId,
       tagId: params.tagId,
+      tagIds: params.tagIds,
       pinnedOnly: params.pinnedOnly ?? undefined,
       searchQueryString: params.searchQueryString,
     });
@@ -39,6 +40,8 @@ const useLinks = (params: LinkRequestQuery = {}, auth?: MobileAuth) => {
     sort,
     params.collectionId,
     params.tagId,
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    params.tagIds?.join(","),
     params.pinnedOnly,
     params.searchQueryString,
   ]);
@@ -101,13 +104,19 @@ const useFetchLinks = (params: string, auth?: MobileAuth) => {
 
 const buildQueryString = (params: LinkRequestQuery) => {
   return Object.keys(params)
-    .filter((key) => params[key as keyof LinkRequestQuery] !== undefined)
-    .map(
-      (key) =>
-        `${encodeURIComponent(key)}=${encodeURIComponent(
-          params[key as keyof LinkRequestQuery] as string
-        )}`
-    )
+    .filter((key) => {
+      const value = params[key as keyof LinkRequestQuery];
+      if (value === undefined) return false;
+      if (Array.isArray(value) && value.length === 0) return false;
+      return true;
+    })
+    .map((key) => {
+      const value = params[key as keyof LinkRequestQuery];
+      if (Array.isArray(value)) {
+        return `${encodeURIComponent(key)}=${value.map((v) => encodeURIComponent(String(v))).join(",")}`;
+      }
+      return `${encodeURIComponent(key)}=${encodeURIComponent(String(value))}`;
+    })
     .join("&");
 };
 

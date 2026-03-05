@@ -21,6 +21,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import ConfirmationModal from "./ConfirmationModal";
+import TagFilterSelect from "./InputSelect/TagFilterSelect";
 
 type Props = {
   children: React.ReactNode;
@@ -32,6 +33,8 @@ type Props = {
   editMode?: boolean;
   setEditMode?: (mode: boolean) => void;
   links: LinkIncludingShortenedCollectionAndTags[];
+  selectedTagIds?: number[];
+  onTagFilterChange?: (tagIds: number[]) => void;
 };
 
 const LinkListOptions = ({
@@ -44,6 +47,8 @@ const LinkListOptions = ({
   editMode,
   setEditMode,
   links,
+  selectedTagIds,
+  onTagFilterChange,
 }: Props) => {
   const { selectedIds, setSelected, clearSelected, selectionCount } =
     useLinkStore();
@@ -150,6 +155,15 @@ const LinkListOptions = ({
           </div>
         </div>
       </div>
+
+      {onTagFilterChange && (
+        <div className="mt-2">
+          <TagFilterSelect
+            onChange={onTagFilterChange}
+            value={selectedTagIds}
+          />
+        </div>
+      )}
 
       {links && editMode && links.length > 0 && (
         <div className="w-full flex justify-between items-center min-h-[32px]">

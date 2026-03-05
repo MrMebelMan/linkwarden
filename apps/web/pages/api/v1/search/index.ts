@@ -19,6 +19,9 @@ export default async function search(
         ? Number(req.query.collectionId as string)
         : undefined,
       tagId: req.query.tagId ? Number(req.query.tagId as string) : undefined,
+      tagIds: req.query.tagIds
+        ? (req.query.tagIds as string).split(",").map(Number).filter((n) => !isNaN(n))
+        : undefined,
       pinnedOnly: req.query.pinnedOnly
         ? req.query.pinnedOnly === "true"
         : undefined,

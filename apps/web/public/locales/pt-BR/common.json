@@ -446,6 +446,8 @@
   "disabled": "Desabilitado",
   "ai_tagging_disabled_desc": "A marcação IA está desativada.",
   "tag_selection_placeholder": "Escolher ou adicionar tags personalizadas…",
+  "filter_by_tags": "Filter by tags...",
+  "no_tags_found": "No tags found",
   "rss_subscriptions": "Subscrição RSS",
   "rss_subscriptions_desc": "Assinaturas RSS são uma maneira de acompanhar seus sites e ‘blogs’ favoritos. O Linkwarden obterá automaticamente os artigos mais recentes a cada minuto de {{number}} dos \"feeds\"",
   "rss_deletion_confirmation": "Tem certeza que deseja excluir esta inscrição?",
